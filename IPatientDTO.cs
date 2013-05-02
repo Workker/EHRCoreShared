@@ -21,8 +21,8 @@ namespace EHR.CoreShared
         string CPF { get; set; }
         [ProtoMember(5)]
         string Identity { get; set; }
-        [ProtoMember(6)]
-        DbEnum Hospital { get; set; }
+        //[ProtoMember(6)]
+       // DbEnum Hospital { get; set; }
         [ProtoMember(7)]
         List<string> Records { get; set; }
 
