@@ -1,9 +1,6 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProtoBuf;
 
 namespace EHR.CoreShared
 {
@@ -21,8 +18,8 @@ namespace EHR.CoreShared
         string CPF { get; set; }
         [ProtoMember(5)]
         string Identity { get; set; }
-        //[ProtoMember(6)]
-       // DbEnum Hospital { get; set; }
+        [ProtoMember(6)]
+        DbEnum Hospital { get; set; }
         [ProtoMember(7)]
         List<string> Records { get; set; }
 
