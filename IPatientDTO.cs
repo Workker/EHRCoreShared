@@ -21,10 +21,12 @@ namespace EHR.CoreShared
         [ProtoMember(6)]
         DbEnum Hospital { get; set; }
         [ProtoMember(7)]
-        List<string> Records { get; set; }
+        List<RecordDTO> Records { get; set; }
+        [ProtoMember(8)]
+        List<ITreatmentDTO> Treatments { get; set; }
 
         string GetCPF();
-        void AddRecord(string record);
+        void AddRecord(RecordDTO record);
 
 
         void AddTreatments(IList<ITreatmentDTO> treatments);

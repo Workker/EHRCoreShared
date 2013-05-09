@@ -15,5 +15,8 @@ namespace EHR.CoreShared
 
         [ProtoMember(3)]
         public DateTime CheckOutDate { get; set; }
+
+        [ProtoMember(4)]
+        public virtual DbEnum Hospital { get; set; }
     }
 }

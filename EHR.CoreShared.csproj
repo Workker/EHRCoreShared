@@ -49,6 +49,7 @@
     <Compile Include="ITreatment.cs" />
     <Compile Include="PatientDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordDTO.cs" />
     <Compile Include="TreatmentDTO.cs" />
   </ItemGroup>
   <ItemGroup>

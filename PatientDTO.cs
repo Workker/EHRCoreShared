@@ -29,13 +29,14 @@ namespace EHR.CoreShared
         public virtual DbEnum Hospital { get; set; }
 
         [ProtoMember(7)]
-        public virtual List<string> Records { get; set; }
+        public virtual List<RecordDTO> Records { get; set; }
 
+        [ProtoMember(8)]
         public virtual List<ITreatmentDTO> Treatments { get; set; }
 
         public PatientDTO()
         {
-            Records = new List<string>();
+            Records = new List<RecordDTO>();
             Treatments = new List<ITreatmentDTO>();
         }
 
@@ -44,10 +45,10 @@ namespace EHR.CoreShared
             return Regex.Replace(CPF, "[^0-9]", string.Empty);
         }
 
-        public virtual void AddRecord(string record)
+        public virtual void AddRecord(RecordDTO record)
         {
             if (Records == null)
-                Records = new List<string>();
+                Records = new List<RecordDTO>();
 
             Records.Add(record);
         }
