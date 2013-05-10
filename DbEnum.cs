@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System.ComponentModel;
+using ProtoBuf;
 using System;
 
 namespace EHR.CoreShared
@@ -8,10 +9,12 @@ namespace EHR.CoreShared
     public enum DbEnum : short
     {
         [ProtoEnum(Name = "BarraDor", Value = 1)]
+        [Description("Barra'Dor")]
         BarraDor = 1,
         [ProtoEnum(Name = "Sumario", Value = 2)]
         sumario,
         [ProtoEnum(Name = "QuintaDor", Value = 3)]
+        [Description("Quinta'Dor")]
         QuintaDor,
         [ProtoEnum(Name = "QuintaDor", Value = 4)]
         QuintaDorProd
