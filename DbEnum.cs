@@ -13,11 +13,8 @@ namespace EHR.CoreShared
         BarraDor = 1,
         [ProtoEnum(Name = "Sumario", Value = 2)]
         sumario,
-        [ProtoEnum(Name = "QuintaDor", Value = 3)]
-        [Description("Quinta'Dor")]
-        QuintaDor,
         [ProtoEnum(Name = "QuintaDor", Value = 4)]
-        QuintaDorProd
+        QuintaDor
 
     }
 }
