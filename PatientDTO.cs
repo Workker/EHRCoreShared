@@ -26,7 +26,7 @@ namespace EHR.CoreShared
         public virtual string Identity { get; set; }
 
         [ProtoMember(6)]
-        public virtual DbEnum Hospital { get; set; }
+        public virtual DbEnum? Hospital { get; set; }
 
         [ProtoMember(7)]
         public virtual List<RecordDTO> Records { get; set; }

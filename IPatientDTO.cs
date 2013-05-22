@@ -19,7 +19,7 @@ namespace EHR.CoreShared
         [ProtoMember(5)]
         string Identity { get; set; }
         [ProtoMember(6)]
-        DbEnum Hospital { get; set; }
+        DbEnum? Hospital { get; set; }
         [ProtoMember(7)]
         List<RecordDTO> Records { get; set; }
         [ProtoMember(8)]
