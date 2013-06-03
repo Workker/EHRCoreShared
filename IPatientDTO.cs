@@ -24,10 +24,14 @@ namespace EHR.CoreShared
         List<RecordDTO> Records { get; set; }
         [ProtoMember(8)]
         List<ITreatmentDTO> Treatments { get; set; }
+        [ProtoMember(9)]
+        DateTime? EntryDate { get; set; }
+        [ProtoMember(10)]
+        DateTime? CheckOutDate { get; set; }
 
         string GetCPF();
         void AddRecord(RecordDTO record);
-
+        void SetLastTreatment();
 
         void AddTreatments(IList<ITreatmentDTO> treatments);
     }

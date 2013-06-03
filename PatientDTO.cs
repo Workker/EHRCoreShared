@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using System.Linq;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -33,6 +34,23 @@ namespace EHR.CoreShared
 
         [ProtoMember(8)]
         public virtual List<ITreatmentDTO> Treatments { get; set; }
+
+        [ProtoMember(2)]
+        public DateTime? EntryDate { get; set; }
+
+        [ProtoMember(3)]
+        public DateTime? CheckOutDate { get; set; }
+
+        public void SetLastTreatment()
+        {
+            if (Treatments != null && Treatments.Count > 0)
+            {
+                var treatment = Treatments.OrderByDescending(t => t.CheckOutDate).FirstOrDefault();
+                this.EntryDate = treatment.EntryDate;
+                this.CheckOutDate = treatment.CheckOutDate;
+                this.Hospital = treatment.Hospital;
+            }
+        }
 
         public PatientDTO()
         {

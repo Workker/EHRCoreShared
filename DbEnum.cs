@@ -8,11 +8,12 @@ namespace EHR.CoreShared
     [ProtoContract(SkipConstructor = true)]
     public enum DbEnum : short
     {
-        [ProtoEnum(Name = "BarraDor", Value = 1)]
-        [Description("Barra'Dor")]
-        BarraDor = 1,
+        //View de atendimento não existe no servidor
+        //[ProtoEnum(Name = "BarraDor", Value = 1)]
+        //[Description("Barra'Dor")]
+        //BarraDor = 1,
         [ProtoEnum(Name = "Sumario", Value = 2)]
-        sumario,
+        sumario = 2,
         [ProtoEnum(Name = "QuintaDor", Value = 4)]
         QuintaDor,
         [ProtoEnum(Name = "Pronto", Value = 5)]
