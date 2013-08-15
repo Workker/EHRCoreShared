@@ -37,19 +37,19 @@ namespace EHR.CoreShared
         public virtual List<ITreatment> Treatments { get; set; }
 
         [ProtoMember(2)]
-        public DateTime? EntryDate { get; set; }
+        public virtual DateTime? EntryDate { get; set; }
 
         [ProtoMember(3)]
-        public DateTime? CheckOutDate { get; set; }
+        public virtual DateTime? CheckOutDate { get; set; }
 
-        public void SetLastTreatment()
+        public virtual void SetLastTreatment()
         {
             if (Treatments != null && Treatments.Count > 0)
             {
                 var treatment = Treatments.OrderByDescending(t => t.CheckOutDate).FirstOrDefault();
-                this.EntryDate = treatment.EntryDate;
-                this.CheckOutDate = treatment.CheckOutDate;
-                this.Hospital = treatment.Hospital;
+                EntryDate = treatment.EntryDate;
+                CheckOutDate = treatment.CheckOutDate;
+                Hospital = treatment.Hospital;
             }
         }
 
