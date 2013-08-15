@@ -1,10 +1,10 @@
 ﻿using ProtoBuf;
 using System;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Interfaces
 {
     [ProtoContract(SkipConstructor = true)]
-    public interface ITreatmentDTO
+    public interface ITreatment
     {
         [ProtoMember(1)]
         string Id { get; set; }

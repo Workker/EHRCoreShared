@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Interfaces
 {
     [ProtoContract(SkipConstructor = true)]
     //[ProtoInclude(7, typeof(PatientDTO))]
-    public interface IPatientDTO
+    public interface IPatient
     {
         [ProtoMember(1)]
         string Id { get; set; }
@@ -21,18 +21,18 @@ namespace EHR.CoreShared
         [ProtoMember(6)]
         DbEnum? Hospital { get; set; }
         [ProtoMember(7)]
-        List<RecordDTO> Records { get; set; }
+        List<Record> Records { get; set; }
         [ProtoMember(8)]
-        List<ITreatmentDTO> Treatments { get; set; }
+        List<ITreatment> Treatments { get; set; }
         [ProtoMember(9)]
         DateTime? EntryDate { get; set; }
         [ProtoMember(10)]
         DateTime? CheckOutDate { get; set; }
 
         string GetCPF();
-        void AddRecord(RecordDTO record);
+        void AddRecord(Record record);
         void SetLastTreatment();
 
-        void AddTreatments(IList<ITreatmentDTO> treatments);
+        void AddTreatments(IList<ITreatment> treatments);
     }
 }

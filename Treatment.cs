@@ -1,11 +1,12 @@
-﻿using ProtoBuf;
+﻿using EHR.CoreShared.Interfaces;
+using ProtoBuf;
 using System;
 
 namespace EHR.CoreShared
 {
     [Serializable]
     [ProtoContract(SkipConstructor = true)]
-    public class TreatmentDTO : ITreatmentDTO
+    public class Treatment : ITreatment
     {
         [ProtoMember(1)]
         public string Id { get; set; }

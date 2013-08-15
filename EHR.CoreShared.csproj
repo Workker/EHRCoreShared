@@ -40,16 +40,19 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CidDTO.cs" />
+    <Compile Include="CID.cs" />
     <Compile Include="DbEnum.cs" />
-    <Compile Include="DefDTO.cs" />
-    <Compile Include="IPatientDTO.cs" />
-    <Compile Include="ITreatment.cs" />
-    <Compile Include="PatientDTO.cs" />
+    <Compile Include="DEF.cs" />
+    <Compile Include="Hospital.cs" />
+    <Compile Include="Interfaces\IAggregateRoot.cs" />
+    <Compile Include="Interfaces\IPatient.cs" />
+    <Compile Include="Interfaces\ITreatment.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecordDTO.cs" />
-    <Compile Include="TreatmentDTO.cs" />
-    <Compile Include="TusDTO.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="Treatment.cs" />
+    <Compile Include="TUS.cs" />
+    <Compile Include="ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

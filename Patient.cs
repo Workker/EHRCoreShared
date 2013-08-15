@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using EHR.CoreShared.Interfaces;
 using ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace EHR.CoreShared
 
     [Serializable]
     [ProtoContract(SkipConstructor = true)]
-    public class PatientDTO : IPatientDTO
+    public class Patient : IPatient
     {
         [ProtoMember(1)]
         public virtual string Id { get; set; }
@@ -30,10 +31,10 @@ namespace EHR.CoreShared
         public virtual DbEnum? Hospital { get; set; }
 
         [ProtoMember(7)]
-        public virtual List<RecordDTO> Records { get; set; }
+        public virtual List<Record> Records { get; set; }
 
         [ProtoMember(8)]
-        public virtual List<ITreatmentDTO> Treatments { get; set; }
+        public virtual List<ITreatment> Treatments { get; set; }
 
         [ProtoMember(2)]
         public DateTime? EntryDate { get; set; }
@@ -52,10 +53,10 @@ namespace EHR.CoreShared
             }
         }
 
-        public PatientDTO()
+        public Patient()
         {
-            Records = new List<RecordDTO>();
-            Treatments = new List<ITreatmentDTO>();
+            Records = new List<Record>();
+            Treatments = new List<ITreatment>();
         }
 
         public virtual string GetCPF()
@@ -63,19 +64,19 @@ namespace EHR.CoreShared
             return Regex.Replace(CPF, "[^0-9]", string.Empty);
         }
 
-        public virtual void AddRecord(RecordDTO record)
+        public virtual void AddRecord(Record record)
         {
             if (Records == null)
-                Records = new List<RecordDTO>();
+                Records = new List<Record>();
 
             Records.Add(record);
         }
 
 
-        public virtual void AddTreatments(IList<ITreatmentDTO> treatments)
+        public virtual void AddTreatments(IList<ITreatment> treatments)
         {
             if (Treatments == null)
-                Treatments = new List<ITreatmentDTO>();
+                Treatments = new List<ITreatment>();
 
             Treatments.AddRange(treatments);
         }

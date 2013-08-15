@@ -1,9 +1,8 @@
 ﻿
 namespace EHR.CoreShared
 {
-    public class RecordDTO
+    public class CID : ValueObject
     {
         public virtual string Code { get; set; }
-        public virtual DbEnum Hospital { get; set; }
     }
 }
