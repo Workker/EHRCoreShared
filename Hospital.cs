@@ -14,5 +14,8 @@ namespace EHR.CoreShared
 
         [ProtoMember(5)]
         public virtual State State { get; set; }
+
+        [ProtoMember(6)]
+        public virtual DbEnum Key { get; set; }
     }
 }
