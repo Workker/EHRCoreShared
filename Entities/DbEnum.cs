@@ -2,7 +2,7 @@
 using ProtoBuf;
 using System;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Entities
 {
     [Serializable]
     [ProtoContract(SkipConstructor = true)]

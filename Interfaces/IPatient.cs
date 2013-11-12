@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using EHR.CoreShared.Entities;
+using ProtoBuf;
 using System;
 using System.Collections.Generic;
 
@@ -28,6 +29,8 @@ namespace EHR.CoreShared.Interfaces
         DateTime? EntryDate { get; set; }
         [ProtoMember(10)]
         DateTime? CheckOutDate { get; set; }
+        [ProtoMember(11)]
+        Char Genre { get; set; }
 
         string GetCPF();
         void AddRecord(Record record);

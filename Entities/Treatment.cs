@@ -2,7 +2,7 @@
 using ProtoBuf;
 using System;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Entities
 {
     [Serializable]
     [ProtoContract(SkipConstructor = true)]
@@ -18,6 +18,6 @@ namespace EHR.CoreShared
         public DateTime CheckOutDate { get; set; }
 
         [ProtoMember(4)]
-        public virtual DbEnum Hospital { get; set; }
+        public virtual Hospital Hospital { get; set; }
     }
 }

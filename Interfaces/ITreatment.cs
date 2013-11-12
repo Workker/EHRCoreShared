@@ -1,4 +1,5 @@
-﻿using ProtoBuf;
+﻿using EHR.CoreShared.Entities;
+using ProtoBuf;
 using System;
 
 namespace EHR.CoreShared.Interfaces
@@ -12,8 +13,7 @@ namespace EHR.CoreShared.Interfaces
         DateTime EntryDate { get; set; }
         [ProtoMember(3)]
         DateTime CheckOutDate { get; set; }
-
         [ProtoMember(4)]
-        DbEnum Hospital { get; set; }
+        Hospital Hospital { get; set; }
     }
 }

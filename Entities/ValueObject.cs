@@ -1,7 +1,7 @@
 ﻿using EHR.CoreShared.Interfaces;
 using ProtoBuf;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Entities
 {
     [ProtoContract]
     [ProtoInclude(5, typeof(Hospital))]

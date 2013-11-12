@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Entities
 {
 
     [Serializable]
@@ -42,6 +42,9 @@ namespace EHR.CoreShared
         [ProtoMember(3)]
         public virtual DateTime? CheckOutDate { get; set; }
 
+        [ProtoMember(9)]
+        public char Genre { get; set; }
+
         public virtual void SetLastTreatment()
         {
             if (Treatments != null && Treatments.Count > 0)
@@ -49,7 +52,7 @@ namespace EHR.CoreShared
                 var treatment = Treatments.OrderByDescending(t => t.CheckOutDate).FirstOrDefault();
                 EntryDate = treatment.EntryDate;
                 CheckOutDate = treatment.CheckOutDate;
-                Hospital = treatment.Hospital;
+                Hospital = treatment.Hospital.Key;
             }
         }
 

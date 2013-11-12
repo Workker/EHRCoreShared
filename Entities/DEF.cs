@@ -1,5 +1,5 @@
 ﻿
-namespace EHR.CoreShared
+namespace EHR.CoreShared.Entities
 {
     public class DEF : ValueObject
     {
