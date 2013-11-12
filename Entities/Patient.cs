@@ -43,7 +43,7 @@ namespace EHR.CoreShared.Entities
         public virtual DateTime? CheckOutDate { get; set; }
 
         [ProtoMember(9)]
-        public char Genre { get; set; }
+        public virtual char Genre { get; set; }
 
         public virtual void SetLastTreatment()
         {
