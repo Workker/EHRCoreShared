@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CID.cs" />
-    <Compile Include="Entities\DbEnum.cs" />
     <Compile Include="Entities\DEF.cs" />
     <Compile Include="Entities\Hospital.cs" />
     <Compile Include="Interfaces\IAggregateRoot.cs" />
@@ -67,8 +66,6 @@
     <Compile Include="Entities\Treatment.cs" />
     <Compile Include="Entities\TUSS.cs" />
     <Compile Include="Entities\ValueObject.cs" />
-    <Compile Include="Repository\AbstractRepository.cs" />
-    <Compile Include="Repository\BaseRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

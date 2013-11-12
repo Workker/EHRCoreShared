@@ -28,7 +28,7 @@ namespace EHR.CoreShared.Entities
         public virtual string Identity { get; set; }
 
         [ProtoMember(6)]
-        public virtual DbEnum? Hospital { get; set; }
+        public virtual Hospital Hospital { get; set; }
 
         [ProtoMember(7)]
         public virtual List<Record> Records { get; set; }
@@ -52,7 +52,7 @@ namespace EHR.CoreShared.Entities
                 var treatment = Treatments.OrderByDescending(t => t.CheckOutDate).FirstOrDefault();
                 EntryDate = treatment.EntryDate;
                 CheckOutDate = treatment.CheckOutDate;
-                Hospital = treatment.Hospital.Key;
+                Hospital = treatment.Hospital;
             }
         }
 
@@ -75,7 +75,6 @@ namespace EHR.CoreShared.Entities
             Records.Add(record);
         }
 
-
         public virtual void AddTreatments(IList<ITreatment> treatments)
         {
             if (Treatments == null)
@@ -83,13 +82,5 @@ namespace EHR.CoreShared.Entities
 
             Treatments.AddRange(treatments);
         }
-    }
-
-    public enum HospitalPatientEnum : short
-    {
-        QuintaDor = 1,
-        NiteroiDor,
-        CopaDor,
-        BarraDor
     }
 }
