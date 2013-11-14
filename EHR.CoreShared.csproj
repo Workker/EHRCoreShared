@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\CID.cs" />
+    <Compile Include="Entities\Database.cs" />
     <Compile Include="Entities\DEF.cs" />
     <Compile Include="Entities\Hospital.cs" />
     <Compile Include="Interfaces\IAggregateRoot.cs" />
