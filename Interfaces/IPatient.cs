@@ -7,7 +7,7 @@ namespace EHR.CoreShared.Interfaces
 {
     [ProtoContract(SkipConstructor = true)]
     //[ProtoInclude(7, typeof(PatientDTO))]
-    public interface IPatient
+    public interface IPatient : IAggregateRoot<string>
     {
         [ProtoMember(1)]
         string Id { get; set; }
